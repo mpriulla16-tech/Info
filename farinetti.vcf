@@ -1,3 +1,10 @@
-<a href="farinetti.vcf" download>
-  <button>Aggiungi ai contatti</button>
-</a>
+BEGIN:VCARD
+VERSION:3.0
+N:Farinetti;Maria Cristina
+FN:Avv. Maria Cristina Farinetti
+ORG:Studio Legale Farinetti-Ferrero
+TEL;TYPE=WORK,VOICE:0173970312
+EMAIL;TYPE=INTERNET:mc.farinetti@gmail.com
+EMAIL;TYPE=INTERNET:mariacristina.farinetti@ordineavvocatialba.eu
+ADR;TYPE=WORK:;;Via Roma 97/A;Canale;CN;12043;Italia
+END:VCARD
