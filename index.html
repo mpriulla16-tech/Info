@@ -39,7 +39,6 @@
       font-size: 20px;
       font-weight: 600;
       text-align: center;
-      letter-spacing: 0.3px;
     }
     h2 {
       margin: 6px 0 26px;
@@ -53,7 +52,6 @@
       gap: 10px;
       margin-bottom: 14px;
       font-size: 14px;
-      line-height: 1.4;
     }
     .icon {
       width: 22px;
@@ -67,12 +65,29 @@
       background: #cfcfcf;
       margin: 22px 0;
     }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: #2b2b2b;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .btn:hover {
+      background: #444;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Avv. Maria Cristina Farinetti</h1>
     <h2>Studio Legale Farinetti-Ferrero</h2>
+
     <div class="info">
       <div class="icon">📞</div>
       <div>0173 970312</div>
@@ -89,8 +104,36 @@
       <div class="icon">📍</div>
       <div>Via Roma 97/A<br>12043 Canale (CN)</div>
     </div>
+
     <div class="divider"></div>
+
+    <button class="btn" onclick="downloadVCard()">
+      ➕ Aggiungi ai contatti
+    </button>
   </div>
+
+  <script>
+    function downloadVCard() {
+      const vCard = `
+BEGIN:VCARD
+VERSION:3.0
+N:Farinetti;Maria Cristina;;Avv.;
+FN:Avv. Maria Cristina Farinetti
+ORG:Studio Legale Farinetti-Ferrero
+TEL;TYPE=WORK,VOICE:0173970312
+EMAIL;TYPE=INTERNET:mc.farinetti@gmail.com
+EMAIL;TYPE=INTERNET:mariacristina.farinetti@ordineavvocatialba.eu
+ADR;TYPE=WORK:;;Via Roma 97/A;Canale;CN;12043;Italia
+END:VCARD
+      `.trim();
+
+      const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Maria_Cristina_Farinetti.vcf";
+      link.click();
+    }
+  </script>
 </body>
 </html>
 
